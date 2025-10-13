@@ -4,9 +4,7 @@ import { motion } from 'motion/react';
 import { siteConfig } from '@/config/site.config';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Announcement, AnnouncementTitle ,AnnouncementTag} from '@/components/ui/announcement';
 import { ArrowRight, Zap } from 'lucide-react';
-import { ArrowUpRightIcon } from 'lucide-react';
 
 export function HeroSection() {
 
