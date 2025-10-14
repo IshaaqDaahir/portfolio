@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import { Badge } from '@/components/ui/badge';
-import { Sparkles, Github, Code2 } from 'lucide-react';
+import { Sparkles, Code2 } from 'lucide-react';
 
 export function ProjectsHeader() {
   return (
