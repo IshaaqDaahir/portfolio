@@ -26,7 +26,7 @@ export default function ContactForm() {
     const formData = new FormData(form);
 
     try {
-      const res = await fetch(form.action || 'https://formspree.io/f/myzynpbr', {
+      const res = await fetch(form.action || `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`, {
         method: form.method || 'POST',
         body: formData,
         headers: {
@@ -51,7 +51,7 @@ export default function ContactForm() {
   // Simple controlled form submit via fetch + tiny toast
   return (
     <>
-      <form action="https://formspree.io/f/myzynpbr" method="POST" className="space-y-4" onSubmit={handleSubmit}>
+      <form action={`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`} method="POST" className="space-y-4" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-2">
           <Label htmlFor="name">Name</Label>
           <Input id="name" name="name" type="text" placeholder="Your full name" required />
@@ -68,7 +68,7 @@ export default function ContactForm() {
         </div>
 
         {/* recommended Formspree fields */}
-        <input type="hidden" name="_subject" value="New contact from website" />
+        <input type="hidden" name="_subject" value="New message from tafiyaudev" />
         <div className="flex items-center gap-3">
           <Button type="submit" disabled={loading}>{loading ? 'Sending...' : 'Send message'}</Button>
           <p className="text-sm text-muted-foreground">We will reply within 2 business days.</p>
