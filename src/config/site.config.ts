@@ -114,7 +114,10 @@ export const siteConfig: SiteConfig = {
     description: 'Full Stack developer creating useful & delightful web experiences. Exploring ML & AI.',
     keywords: [
       'Isiya Dahiru',
-      'Tafiyau Dev',
+      'Dev',
+      'tafiyau',
+      'tafiyaudev',
+      'Tafiyau',
       'Full Stack Developer',
       'Portfolio',
       'Next.js',
