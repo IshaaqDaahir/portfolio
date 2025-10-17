@@ -68,7 +68,7 @@ export default function ContactForm() {
         </div>
 
         {/* recommended Formspree fields */}
-        <input type="hidden" name="_subject" value="New message from tafiyaudev" />
+        <input type="hidden" name="_subject" value="New message from Tafiyau Dev" />
         <div className="flex items-center gap-3">
           <Button type="submit" disabled={loading}>{loading ? 'Sending...' : 'Send message'}</Button>
           <p className="text-sm text-muted-foreground">We will reply within 2 business days.</p>
