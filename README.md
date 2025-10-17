@@ -23,9 +23,9 @@
 ![GitHub stars](https://img.shields.io/github/stars/IshaaqDaahir/portfolio.svg?style=social&label=Stars)
 
 [![Follow me on GitHub](https://img.shields.io/github/followers/IshaaqDaahir?label=Follow&style=social)](https://github.com/IshaaqDaahir)
-[![Discord](https://img.shields.io/badge/Discord-Join%20us-7289DA?logo=discord&style=flat-square)](https://discord.gg/mXMhy2EX)
+[![Discord](https://img.shields.io/badge/Discord-Join%20us-7289DA?logo=discord&style=flat-square)](https://discord.gg/#)
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F6MME1W)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/#)
 
 </div>
 
