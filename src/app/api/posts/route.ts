@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import sanitizeHtml from 'sanitize-html';
 
 interface HashnodePost {
   id: string;
@@ -134,9 +135,8 @@ export async function GET() {
           
           mediumPosts.slice(0, 10).forEach((post: MediumItem, index: number) => {
             // Extract brief from content
-            const brief = post.description
-              ?.replace(/<[^>]*>/g, '') // Remove HTML tags
-              ?.substring(0, 200) + '...';
+            const brief = sanitizeHtml(post.description || '', { allowedTags: [], allowedAttributes: {} })
+              .substring(0, 200) + '...';
             
             posts.push({
               id: `medium-${index}-${post.link}`,
