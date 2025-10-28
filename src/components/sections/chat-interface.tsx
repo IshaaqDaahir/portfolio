@@ -29,28 +29,40 @@ export function ChatInterface() {
 
   useEffect(() => {
     if (!user) return;
-    fetch(`/api/chat?user=${user}`)
+    fetch('/api/chat')
       .then(res => res.json())
-      .then(data => setMessages(data.messages || []));
+      .then(data => setMessages(data.messages || []))
   }, [user]);
 
   const handleSend = async () => {
     if (!input.trim() || !user) return;
     setLoading(true);
+    
     const newMsg: Message = {
       sender: 'user',
       name: 'You',
-      avatar: '/avatar-user.png',
+      avatar: data?.user?.image || '/avatar-user.svg',
       content: input,
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     };
-    await fetch('/api/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ user, message: newMsg }),
-    });
-    setMessages(prev => [...prev, newMsg]);
-    setInput('');
+    
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: { content: input } }),
+      });
+      
+      if (response.ok) {
+        setMessages(prev => [...prev, newMsg]);
+        setInput('');
+      } else {
+        alert('Failed to send message');
+      }
+    } catch (error) {
+      alert('Error sending message');
+    }
+    
     setLoading(false);
   };
 
