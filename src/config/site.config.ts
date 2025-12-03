@@ -174,6 +174,7 @@ export function buildMetadata(overrides: Partial<Metadata> = {}): Metadata {
       robots: seo.robots,
       'theme-color': seo.themeColor,
       'og:image:alt': seo.imageAlt,
+      'google-site-verification': 'nU0XSTKmNK0YzicCFL3DOTEpzKQqmXYNWnBbiK-E0wQ',
     },
   } as Metadata;
 
